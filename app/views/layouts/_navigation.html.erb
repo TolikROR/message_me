@@ -1,6 +1,4 @@
-        <a class="item">
-          Chatroom
-        </a>
+        <%= link_to 'Chatroom', root_path, class: "ui item" %>
         <a class="item">
           Messages
         </a>
@@ -8,12 +6,18 @@
           <div class="ui dropdown item">
             Account <i class="dropdown icon"></i>
             <div class="menu">
-              <a class="item">Log out</a>
-              <a class="item">Log in</a>
-              <a class="item">Sing up</a>
+              
+              <% if logged_in? %>
+                <%= link_to 'Log out', logout_path, class: "ui item", method: :delete %>
+              <% else %>
+                <%= link_to 'Log in', login_path, class: "ui item" %>
+                <%= link_to 'Sign up', signup_path, class: "ui item" %>
+              <% end %>
             </div>
           </div>
           <div class="item">
-              <div class="ui primary button">Sign Up</div>
+            <% if logged_in? %>
+              <%= link_to 'profile', user_path(current_user), class: "ui item" %>
+            <% end %>
           </div>
         </div>

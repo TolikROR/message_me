@@ -8,6 +8,10 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'bcrypt', '~> 3.1.7'
+gem 'hirb'
+
+gem 'puma'
 
 gem 'semantic-ui-sass'
 
